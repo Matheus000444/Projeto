@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Trabalho!</title>
+
+    <script type="text/javascript" src="./index.js" defer=""></script>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+
+  <body>
+    <style>
+      body {
+        background-color: powderblue;
+
+        font-family: cursive
+      }
+
+      input {
+        border-radius: 7px
+      }
+
+      input {
+        width: 200px;
+        height: 20px;
+        background-color: #f0f0f0;
+        box-shadow: 10px 10px 20px rgba(0, 1 0, 1 0, 1 1.3);
+      }
+
+
+
+      #sombra {
+        width: 200px;
+        height: 200px;
+        background-color: #f0f0f0;
+        box-shadow: 10px 10px 20px rgba(1, 1, 1, 1.3);
+      }
+
+      #color {}
+
+      body {
+        background-image: url('mario.png');
+      }
+    </style>
+    <div id="sombra">
+
+      <img src="mario.png" height="200px" width="200px">
+    </div>
+
+    <br>
+
+
+
+
+    <br>
+    <h1>Oi Mundo!</h1>
+
+    <h2>Nome: Matheus Fiusson Dutra da Costa</h2>
+
+    <h2>Cidade: Lajeado-rs </h2>
+
+    <h2>Gmail: matheusdutradacosta@gmail.com</h2>
+
+    <br><br>
+
+
+    <h1>Meus projetos ,ta em desvolvimento: </h1>
+
+    <h3>[1] - IMC: </h3>
+
+
+    <h2>Peso</h2>
+    <h4>(ex.: 69,2)</h4>
+    <input type="text" id="Peso">
+
+
+
+    <h2>Altura</h2>
+    <h4>(ex.: 1,70)</h4>
+
+    <input type="text" id="altura">
+
+    <button id="calcular">Calcular </button>
+
+    <br><br>
+
+    <input type="text" readonly="" id="resultado">
+
+    <h3>[2] - Calculadora</h3>
+
+    <h2>Valor [1]</h2>
+
+
+    <input type="text" id="valor1">
+
+    <br><br>
+
+    <h2>Valor [2]</h2>
+
+    <input type="text" id="valor2">
+
+
+    <br><br>
+
+
+    <button id="ma">+</button>
+    <button id="me">-</button>
+    <button id="di">/</button>
+    <button id="ve">*</button>
+    <br><br>
+    <input type="text" readonly="" id="resultadov">
+
+    <h3>[3] - login</h3>
+
+    <h2>Login</h2>
+    <h2>
+      <input type="text" id="login">
+    </h2>
+    <h2>Senha</h2>
+    <h2>
+      <input type="text" id="senha">
+
+      <button id="logo">Login</button>
+      <br><br>
+
+      <input type="text" readonly="" id="resultados">
+
+    </h2>
+    <h3>[4] - Mensagem</h3>
+    <textarea id="resumo" rows="4" cols="50"></textarea>
+
+
+    <p id="qtde">Quantidade: </p>
+
+
+    <button onclick="limpar()"> Limpar</button>
+
+    <h3>[5] - Sorteador</h3>
+
+
+    <p id="demo"></p>
+    <button id="alea">Sortear</button>
+    <br><br>
+
+
+
+
+    <script>
+      let peso = document.getElementById('Peso')
+      let altura = document.getElementById('altura')
+      let sole = document.getElementById('resultado')
+
+      let botao = document.getElementById('calcular')
+
+      botao.onclick = function() {
+
+        sole.value = peso.value / (altura.value * altura.value)
+
+
+
+
+
+
+      };
+
+      let valor1 = document.getElementById('valor1')
+      let valor2 = document.getElementById('valor2')
+      let calcular = document.getElementById('resultadov')
+      let mais = document.getElementById('ma')
+      let menos = document.getElementById('me')
+      let vezes = document.getElementById('ve')
+      let divisao = document.getElementById('di')
+
+      mais.onclick = function() {
+        calcular.value = parseInt(valor1.value) + parseInt(valor2.value)
+
+      }
+
+      menos.onclick = function() {
+        calcular.value = parseInt(valor1.value) - parseInt(valor2.value)
+
+      }
+      vezes.onclick = function() {
+        calcular.value = parseInt(valor1.value) * parseInt(valor2.value)
+
+      }
+
+      divisao.onclick = function() {
+        calcular.value = parseInt(valor1.value) / parseInt(valor2.value)
+
+      }
+
+      let gmail = document.getElementById('login')
+      let senhas = document.getElementById('senha')
+      let resu = document.getElementById('resultados')
+      let logo = document.getElementById('logo')
+
+      logo.onclick = function() {
+        if (gmail.value == 'matheus.costa@aluno.educalajeado' && senhas.value == 'matheuszelda007') {
+          resu.value = "Certo"
+        } else {
+          resu.value = "Errado"
+
+        }
+
+      };
+
+
+      let qtde = document.getElementById('qtde');
+      let inputElement = document.getElementById('resumo');
+
+
+      inputElement.addEventListener('keyup', function(event) {
+        qtde.innerHTML = 'Quantidade: ' + inputElement.value.length
+      });
+
+
+      function limpar() {
+        inputElement.value = ''
+        qtde.innerHTML = 'Quantidade: '
+      }
+
+      alea.onclick = function() {
+        let x = Math.random() * 11;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+
+  </body>
+
+</html>
